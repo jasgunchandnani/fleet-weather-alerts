@@ -1,0 +1,27 @@
+<div class="alert-card {% if alert.priority == 'critical' %}critical{% endif %}" 
+     id="alert-{{ alert.id }}">
+    
+    <div class="alert-header">
+        <div class="alert-title">
+            {% if alert.priority == 'critical' %}⚠️{% else %}ℹ️{% endif %}
+            {{ alert.title }}
+            <span class="badge badge-{{ alert.priority }}">
+                {{ alert.get_priority_display|upper }}
+            </span>
+        </div>
+        <span class="alert-time">{{ alert.created_at|timesince }} ago</span>
+    </div>
+    
+    <div class="alert-body">
+        <p><strong>Truck:</strong> {{ alert.truck.license_plate }}</p>
+        <p><strong>Driver:</strong> {{ alert.driver.user.get_full_name }}</p>
+        <p><strong>Event:</strong> {{ alert.weather_event.get_event_type_display }} - {{ alert.weather_event.location_name }}</p>
+        <p style="margin-top: 10px;">{{ alert.message|linebreaks }}</p>
+    </div>
+    
+    <div class="alert-actions">
+        <span class="acknowledged">
+            ✓ Acknowledged {{ alert.acknowledged_at|timesince }} ago
+        </span>
+    </div>
+</div>
