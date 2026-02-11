@@ -12,16 +12,16 @@ A real-time weather alert system for fleet management that:
 ## 📸 Screenshots
 
 ### Live Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/db.png)
 
 ### Alert Details
-![Critical Alert](screenshots/critical-alert.png)
+![Standard Alert](screenshots/standard-alrts.png)
 
 ### Admin Interface
 ![Admin Panel](screenshots/admin-panel.png)
 
 ### REST API
-![API Response](screenshots/api-response.png)
+![API Response](screenshots/api_response.png)
 
 ## Features Implemented
 
